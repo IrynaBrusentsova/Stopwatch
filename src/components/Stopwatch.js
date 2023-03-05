@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
- import styles from './Stopwatch.module.scss';
-
+// import styles from './Stopwatch.module.scss';
 
 const Stopwatch = ()=>{
     const [hour, setHour] = useState(0);
@@ -8,6 +7,24 @@ const Stopwatch = ()=>{
     const [second, setSecond] = useState(0);
     const [mSecond, setMsecond] = useState(0);
     const [stop, setStop] = useState(true);
+
+    const stylesButton = {
+        backgroundColor: 'green',
+        margin: '5px',
+        padding:'10px',
+        border: 'none',
+        borderRadius:'5px',
+        color:'white',
+        fontSize: '22px',
+        textTransform:'uppercase',
+    }
+    const stylesContainer = {
+        backgroundColor:'black',
+        color:'white',
+        padding:'100px',
+        marginTop:'100px',
+        textAlign:'center',
+    }
 
     const onStart = () =>{
         setStop(false);
@@ -54,11 +71,11 @@ const Stopwatch = ()=>{
     })
 
     return(
-        <div style = {{textAlign:'center', marginTop:'100px',padding:'100px', backgroundColor:'black', color:'white'}}>
+        <div style= {stylesContainer} >
             <h1>{hour} : {min} : {second} : {mSecond}</h1>
-            <button  className={styles.but} onClick={onStart}>Start</button>
-            <button style = {{background:'green', margin:'5px', padding:'10px', border:'none', borderRadius:'5px', color:'white', fontSize:'22px',textTransform:'uppercase'}}   onClick={onStop}>Stop</button>
-            <button style = {{background:'green', margin:'5px', padding:'10px', border:'none', borderRadius:'5px', color:'white', fontSize:'22px',textTransform:'uppercase'}}   onClick={onReset}>Reset</button>
+            <button style={stylesButton} onClick={onStart}>Start</button>
+            <button style={stylesButton} onClick={onStop}>Stop</button>
+            <button style={stylesButton} onClick={onReset}>Reset</button>
         </div>
 
     )
