@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+ import styles from './Stopwatch.module.scss';
 
 
 const Stopwatch = ()=>{
@@ -56,7 +56,7 @@ const Stopwatch = ()=>{
     return(
         <div style = {{textAlign:'center', marginTop:'100px',padding:'100px', backgroundColor:'black', color:'white'}}>
             <h1>{hour} : {min} : {second} : {mSecond}</h1>
-            <button style = {{background:'green', margin:'5px', padding:'10px', border:'none', borderRadius:'5px', color:'white', fontSize:'22px',textTransform:'uppercase'}}   onClick={onStart}>Start</button>
+            <button  className={styles.but} onClick={onStart}>Start</button>
             <button style = {{background:'green', margin:'5px', padding:'10px', border:'none', borderRadius:'5px', color:'white', fontSize:'22px',textTransform:'uppercase'}}   onClick={onStop}>Stop</button>
             <button style = {{background:'green', margin:'5px', padding:'10px', border:'none', borderRadius:'5px', color:'white', fontSize:'22px',textTransform:'uppercase'}}   onClick={onReset}>Reset</button>
         </div>
